@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Options and Settings</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<style type="text/css">
+			body {
+				margin: 1em auto;
+				max-width: 40em;
+				width: 88%;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<h1>Options and Settings</h1>
+
+		<button id="greet">Say Hi</button>
+		<div id="output" aria-live="polite"></div>
+
+
+
+		<button id="click-me">Click for a surprise</button>
+		<div id="message" aria-live="polite"></div>
+
+
+		<script>
+			function greeting () {
+
+				// Get the elements
+				let btn = document.querySelector('#greet');
+				let output = document.querySelector('#output');
+
+				// Handle click events
+				function handleClicks () {
+					output.textContent = 'Hey there, friend!';
+				}
+
+				// Listen for click events
+				btn.addEventListener('click', handleClicks);
+
+			}
+
+
+			// function greeting (buttonSelector, outputSelector, message) {
+
+			// 	// Get the elements
+			// 	let btn = document.querySelector(buttonSelector);
+			// 	let output = document.querySelector(outputSelector);
+
+			// 	// Handle click events
+			// 	function handleClicks () {
+			// 		output.textContent = message;
+			// 	}
+
+			// 	// Listen for click events
+			// 	btn.addEventListener('click', handleClicks);
+
+			// }
+
+
+
+			// function greeting (buttonSelector = '#greet', outputSelector = '#output', message = 'Hey there, friend!') {
+
+			// 	// Get the elements
+			// 	let btn = document.querySelector(buttonSelector);
+			// 	let output = document.querySelector(outputSelector);
+
+			// 	// Handle click events
+			// 	function handleClicks () {
+			// 		output.textContent = message;
+			// 	}
+
+			// 	// Listen for click events
+			// 	btn.addEventListener('click', handleClicks);
+
+			// }
+
+
+			greeting();
+			greeting('#click-me', '#message', 'Hey hey hey!!');
+		</script>
+	</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>and/or</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+
+	<body>
+
+
+		<script>
+			// Make sure the tool is a wand and there's at least 1 spell
+			function canCastSpells (tool, spells) {
+				if (tool === 'wand' && spells.length > 0) {
+					return true;
+				}
+				return false;
+			}
+
+
+			// If the creature is a unicorn or elf, they're naturally magical
+			function isMagical (creature) {
+				if (creature === 'unicorn' || creature === 'elf') {
+					return true;
+				}
+				return false;
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Temperature Convert | Multiple Inputs</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<style type="text/css">
+			body {
+				margin: 1em auto;
+				max-width: 40em;
+				width: 88%;
+			}
+
+			#result:not(:empty) {
+				background-color: #f7f7f7;
+				border: 1px solid #e5e5e5;
+				margin: 1em 0;
+				padding: 1em;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<h1>Temperature Converter</h1>
+
+		<label for="temp">Enter Your Temperature</label>
+		<input type="text" id="temp">
+
+		<label>
+			<input type="radio" name="units" value="celcius" checked> To Celcius
+		</label>
+
+		<label>
+			<input type="radio" name="units" value="fahrenheit"> To Fahrenheit
+		</label>
+
+		<div id="result" aria-live="polite"></div>
+
+
+		<script>
+			// Get the elements
+			let temp = document.querySelector('#temp');
+			let result = document.querySelector('#result');
+			let toggles = document.querySelectorAll('[name="units"]');
+
+			// Get the selected units to convert to
+			function getUnits () {
+				let units = 'celsius';
+				for (let toggle of toggles) {
+					if (toggle.checked) {
+						units = toggle.value;
+					}
+				}
+				return units;
+			}
+
+			// Convert the temperature
+			function convertTemp (temperature, units) {
+				if (temperature === '') return 0;
+				if (units === 'celcius') {
+					return (parseFloat(temperature) - 32) * 5 / 9;
+				} else {
+					return (parseFloat(temperature) * 9 / 5) + 32;
+				}
+			}
+
+			// Handle input events
+			function handleInput (event) {
+
+				// Only run on #temp input or radio toggles
+				if (event.target.matches('#temp') || event.target.matches('[name="units"]')) {
+
+					// Convert the temperature
+					let units = getUnits();
+					let converted = convertTemp(temp.value, units);
+					result.textContent = `${converted.toFixed(1)} degrees ${units}`;
+
+				}
+
+			}
+
+			// Listen for input events
+			document.addEventListener('input', handleInput);
+		</script>
+	</body>
+</html>

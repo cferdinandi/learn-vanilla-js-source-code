@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Event Bubbling</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<style type="text/css">
+			body {
+				margin: 0 auto;
+				max-width: 40em;
+				width: 88%;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<p>
+			<button class="click-me" id="click-me-1">Click Me</button>
+			<button class="click-me" id="click-me-2">Click Me, Too</button>
+			<button class="click-me" id="click-me-3">Don't You Forget About Me</button>
+			<button class="dont-click-me" id="dont-click-me">Clicking Me Does Nothing</button>
+		</p>
+
+
+		<script>
+			// Get all the buttons
+			let btns = document.querySelectorAll('.click-me');
+
+			/**
+			 * This won't work
+			 */
+			// btns.addEventListener('click', function (event) {
+			// 	console.log(event); // The event details
+			// 	console.log(event.target); // The clicked element
+			// }, false);
+
+
+			/**
+			 * This works, but it's bad for performance
+			 * DON'T DO IT!
+			 */
+			// for (let btn of btns) {
+			// 	btn.addEventListener('click', function (event) {
+			// 		console.log(event); // The event details
+			// 		console.log(event.target); // The clicked element
+			// 	});
+			// }
+
+
+			/**
+			 * A better approach: Event Delegation
+			 * Listen for clicks on the entire document
+			 */
+			document.addEventListener('click', function (event) {
+
+				// If the clicked element has the `.click-me` class, it's a match!
+				if (event.target.matches('.click-me')) {
+					console.log('A button as clicked.');
+				} else {
+					console.log('Not a match!');
+				}
+
+			});
+		</script>
+	</body>
+</html>

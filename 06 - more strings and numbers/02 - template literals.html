@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Template Literals</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+
+	<body>
+
+
+		<script>
+			/**
+			 * Simple multi-line strings
+			 */
+			let str1 =
+				`<h1>Hello, world!</h1>
+				<p>How are you today?</p>`;
+
+			console.log(str1);
+
+
+
+			/**
+			 * Using variables in strings
+			 */
+			let greeting = 'Hi, universe!';
+			let message = 'How is the weather today?';
+			let str2 =
+				`<h1>${greeting}</h1>
+				<p>${message}</p>`;
+
+			console.log(str2);
+		</script>
+	</body>
+</html>

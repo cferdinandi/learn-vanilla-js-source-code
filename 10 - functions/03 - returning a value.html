@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Returning a Value</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+
+	<body>
+
+
+		<script>
+			function sayHi (name) {
+				return `Hi there, ${name}!`;
+			}
+
+			// Get the returned value from the function
+			let greeting = sayHi('merlin');
+			console.log(greeting);
+
+
+			// console.log() will not run
+			function sayBye (name) {
+				let message = `Goodbye, ${name}.`;
+				return message;
+				console.log(message);
+			}
+		</script>
+	</body>
+</html>
