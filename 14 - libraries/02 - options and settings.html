@@ -29,21 +29,21 @@
 
 
 		<script>
-			function greeting () {
+			// function greeting () {
 
-				// Get the elements
-				let btn = document.querySelector('#greet');
-				let output = document.querySelector('#output');
+			// 	// Get the elements
+			// 	let btn = document.querySelector('#greet');
+			// 	let output = document.querySelector('#output');
 
-				// Handle click events
-				function handleClicks () {
-					output.textContent = 'Hey there, friend!';
-				}
+			// 	// Handle click events
+			// 	function handleClicks () {
+			// 		output.textContent = 'Hey there, friend!';
+			// 	}
 
-				// Listen for click events
-				btn.addEventListener('click', handleClicks);
+			// 	// Listen for click events
+			// 	btn.addEventListener('click', handleClicks);
 
-			}
+			// }
 
 
 			// function greeting (buttonSelector, outputSelector, message) {
@@ -64,21 +64,21 @@
 
 
 
-			// function greeting (buttonSelector = '#greet', outputSelector = '#output', message = 'Hey there, friend!') {
+			function greeting (buttonSelector = '#greet', outputSelector = '#output', message = 'Hey there, friend!') {
 
-			// 	// Get the elements
-			// 	let btn = document.querySelector(buttonSelector);
-			// 	let output = document.querySelector(outputSelector);
+				// Get the elements
+				let btn = document.querySelector(buttonSelector);
+				let output = document.querySelector(outputSelector);
 
-			// 	// Handle click events
-			// 	function handleClicks () {
-			// 		output.textContent = message;
-			// 	}
+				// Handle click events
+				function handleClicks () {
+					output.textContent = message;
+				}
 
-			// 	// Listen for click events
-			// 	btn.addEventListener('click', handleClicks);
+				// Listen for click events
+				btn.addEventListener('click', handleClicks);
 
-			// }
+			}
 
 
 			greeting();

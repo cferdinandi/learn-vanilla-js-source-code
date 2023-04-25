@@ -40,7 +40,7 @@
 			// Listen for clicks on it
 			temp.addEventListener('input', function () {
 				let celsius = (parseFloat(temp.value) - 32) * 5 / 9;
-				result.textContent = `${celsius.toFixed(1)} degrees celsius`;
+				result.textContent = celsius;
 			});
 		</script>
 	</body>
